@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="Views/bootstrap.min.css">
 
 <script src="Components/jquery-3.5.0.min.js"></script>
-<script src="Components/items.js"></script>
+<script src="Components/auth.js"></script>
 
 </head>
 <body>
@@ -23,12 +23,16 @@
 		<div class="row">
 			<div class="col">
 			
-			<h1>Login</h1>
-			
-				<form id="formLogin">
+				<form id="formLogin" class="text-center border border-light p-5">
 				
-				UserName: <input id="txtUsername" name="txtUsername" type="text" class="form-control form-control-sm">
-				Password: <input id="txtPassword" name="txtPassword" type="password" class="form-control form-control-sm"><br>
+				<p class="h4 mb-4">Login</p>
+				
+				<div class="d-flex justify-content-center">
+					<input id="txtUsername" name="txtUsername" type="text" class="form-control form-control-sm mb-4" style="width: 300px;" placeholder="UserName:">
+				</div>
+				<div class="d-flex justify-content-center">
+				<input id="txtPassword" name="txtPassword" type="password" class="form-control form-control-sm mb-4" style="width: 300px;" placeholder="Password:">
+				</div><br>
 				
 				<input id="btnLogin" name="btnLogin" type="button" value="Login" class="btn btn-primary"><br><br>
 				
@@ -40,6 +44,13 @@
 			</div> <!-- End of column -->
 		</div> <!-- End of row -->
 	</div> <!-- End of main container -->
+	
+	<% 
+		if (session.getAttribute("Username") != null){
+			response.sendRedirect("items.jsp");
+		}
+	%>
+	
 
 </body>
 </html>
