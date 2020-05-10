@@ -74,6 +74,10 @@ public class AuthAPI extends HttpServlet {
 	 */
 	protected void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		HttpSession session = request.getSession();
+		session.invalidate();
+		response.getWriter().write("success");
 	}
 
 }
