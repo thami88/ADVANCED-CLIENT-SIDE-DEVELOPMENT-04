@@ -37,7 +37,9 @@
 				<input id="btnLogin" name="btnLogin" type="button" value="Login" class="btn btn-primary"><br><br>
 				
 				<!-- Alert -->
-				<div id="alertError" class="alert alert-danger"></div>
+				<div class="d-flex justify-content-center">
+					<div id="alertError" class="alert alert-danger" style="width: 300px;"></div>
+				</div>
 				
 				</form> <!-- End of Form -->
 			
@@ -50,6 +52,14 @@
 			response.sendRedirect("items.jsp");
 		}
 	%>
+	
+	<footer class="page-footer font-small special-color-dark fixed-bottom pt-4">
+
+		<!-- Copyright -->
+		<div class="footer-copyright text-center py-3">Items Management</div>
+		<!-- Copyright -->
+
+	</footer>
 	
 
 </body>
