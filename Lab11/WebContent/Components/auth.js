@@ -64,3 +64,23 @@ function onLoginComplete(response, status){
 	$("#formItem")[0].rest();
 	
 }
+
+function validateLoginForm(){
+	
+	// Username /--------------------------------------------
+	if ($("#txtUsername").val().trim() == "") {
+		
+		return "Insert Username.";
+		
+	}
+	
+	// Password /--------------------------------------------
+	if ($("#txtPassword").val().trim() == "") {
+		
+		return "Insert Password.";
+		
+	}
+	
+	return true;
+	
+}
