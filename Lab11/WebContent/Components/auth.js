@@ -84,3 +84,36 @@ function validateLoginForm(){
 	return true;
 	
 }
+
+// Logout /------------------------------------------------------
+
+$(document).on("click", "#btnLogout", function(event){
+	
+	$.ajax({
+		
+		url : "LoginAPI",
+		type : "DELETE",
+		data : "",
+		dataType : "text",
+		complete : function(response, status){
+			
+			onLogoutComplete(response.responseText, status);
+		}
+		
+	});
+	
+});
+
+function onLogoutComplete(response, status){
+	
+	if (status == "success") {
+		
+		if (response.trim() == "success") {
+			
+			document.location = "index.jsp";
+			
+		}
+		
+	}
+	
+}
