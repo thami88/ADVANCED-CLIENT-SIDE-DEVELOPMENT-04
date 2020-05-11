@@ -20,7 +20,7 @@
 <body>
 
 
-	<!--Navbar-->
+	<!-- -------------------------- Navigation Bar ------------------------------------- -->
 	<nav
 		class="navbar fixed-top navbar-expand-lg navbar-dark special-color-dark">
 		<!-- Collapse button -->
@@ -36,9 +36,7 @@
 			<!-- Links -->
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item "><a class="nav-link" href="#">Home </a></li>
-				<li class="nav-item active"><a class="nav-link" href="#">Item
-						Management<span class="sr-only">(current)</span>
-				</a></li>
+				<li class="nav-item active"><a class="nav-link" href="#">Item Management<span class="sr-only">(current)</span></a></li>
 				<li class="nav-item"><a class="nav-link" href="#">About</a></li>
 			</ul>
 			<!-- Links -->
@@ -55,13 +53,10 @@
 			<div class="col">
 				<!-- ---------------------------- Start of Jumborone ----------------------------- -->
 
-				<div class="jumbotron card card-image mt-5"
-					style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
+				<div class="jumbotron card card-image mt-5" style="background-image: url(https://mdbootstrap.com/img/Photos/Others/gradient1.jpg);">
 					<div class="text-white text-center py-5 px-4">
 						<div>
-							<h2 class="card-title h1-responsive pt-3 mb-5 font-bold">
-								<strong>Items Management</strong>
-							</h2>
+							<h2 class="card-title h1-responsive pt-3 mb-5 font-bold"><strong>Items Management</strong></h2>
 						</div>
 					</div>
 				</div>
@@ -122,7 +117,7 @@
 				<div id="divItemsGrid">
 					<%
 						Item itemObj = new Item();
-					out.print(itemObj.readItems());
+						out.print(itemObj.readItems());
 					%>
 				</div>
 			</div>
@@ -132,6 +127,12 @@
 
 	</div>
 	<!-- End of Container -->
+	
+		<% 
+		if (session.getAttribute("Username") == null){
+			response.sendRedirect("index.jsp");
+		}
+		%>
 
 	<footer class="page-footer font-small special-color-dark pt-4">
 
